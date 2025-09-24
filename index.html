@@ -19,6 +19,7 @@
       --accent-2: #8aa5ff;       /* Subtle accent for hovers */
       --maxw: 1000px;             /* Page width */
       --avatar-url: url('assets/Kravets-Meinke_1.jpg'); /* Put your portrait at assets/profile.jpg (optional) */
+      --avatar-size: clamp(120px, 20vw, 220px); /* <- adjust this only */
     }
 
     /* ======= Base styles (no external libs) ======= */
@@ -42,13 +43,13 @@
     nav a:hover { opacity: 1; }
 
     /* Hero */
-    .hero { display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: center; padding-top: 24px; }
-    .avatar { width: 120px; height: 120px; border-radius: 999px; flex: 0 0 auto; border: 1px solid color-mix(in oklab, canvastext 15%, transparent);
+    .hero { display: grid; grid-template-columns: var(--avatar-size) 1fr; gap: 20px; align-items: center; padding-top: 24px; }
+    .avatar { width: var(--avatar-size); height: var(--avatar-size); border-radius: 999px; flex: 0 0 auto; border: 1px solid color-mix(in oklab, canvastext 15%, transparent);
       background:
-        radial-gradient(120px 120px at 30% 20%, color-mix(in oklab, var(--accent) 40%, transparent), transparent),
+        radial-gradient(var(--avatar-size) var(--avatar-size) at 30% 20%, color-mix(in oklab, var(--accent) 40%, transparent), transparent),
         linear-gradient(180deg, color-mix(in oklab, canvas 90%, var(--accent-2) 10%), canvas);
       background-image: var(--avatar-url),
-        radial-gradient(120px 120px at 30% 20%, color-mix(in oklab, var(--accent) 40%, transparent), transparent),
+        radial-gradient(var(--avatar-size) var(--avatar-size) at 30% 20%, color-mix(in oklab, var(--accent) 40%, transparent), transparent),
         linear-gradient(180deg, color-mix(in oklab, canvas 90%, var(--accent-2) 10%), canvas);
       background-size: cover, auto, auto; background-position: center; }
     .tag { display: inline-block; padding: 6px 10px; border: 1px solid color-mix(in oklab, canvastext 15%, transparent); border-radius: 999px; font-size: 12px; opacity: 0.8; }
