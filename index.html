@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Home</title>
+  <meta name="description" content="Short professional tagline — researcher in X at Y. Portfolio, publications, teaching, and contact." />
+  <meta name="color-scheme" content="light dark" />
+  <meta property="og:title" content="Your Name — Home" />
+  <meta property="og:description" content="Portfolio, publications, teaching, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <style>
+    /* ======= QUICK SETUP (edit these) =======
+       Replace the values below to personalize the site. You don't need to touch the rest. */
+    :root {
+      --accent: #3965ff;          /* Brand accent color */
+      --accent-2: #8aa5ff;       /* Subtle accent for hovers */
+      --maxw: 960px;             /* Page width */
+      --avatar-url: url('assets/profile.jpg'); /* Put your portrait at assets/profile.jpg (optional) */
+    }
+
+    /* ======= Base styles (no external libs) ======= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: canvastext; background: canvas;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+
+    /* Header */
+    .topbar { position: sticky; top: 0; backdrop-filter: saturate(1.2) blur(8px); background: color-mix(in oklab, canvas 85%, var(--accent) 5%);
+      border-bottom: 1px solid color-mix(in oklab, canvastext 15%, transparent); z-index: 10; }
+    .topbar .inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { font-weight: 700; letter-spacing: 0.3px; }
+    nav a { margin-left: 18px; opacity: 0.9; }
+    nav a:hover { opacity: 1; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: center; padding-top: 24px; }
+    .avatar { width: 120px; height: 120px; border-radius: 999px; flex: 0 0 auto; border: 1px solid color-mix(in oklab, canvastext 15%, transparent);
+      background:
+        radial-gradient(120px 120px at 30% 20%, color-mix(in oklab, var(--accent) 40%, transparent), transparent),
+        linear-gradient(180deg, color-mix(in oklab, canvas 90%, var(--accent-2) 10%), canvas);
+      background-image: var(--avatar-url),
+        radial-gradient(120px 120px at 30% 20%, color-mix(in oklab, var(--accent) 40%, transparent), transparent),
+        linear-gradient(180deg, color-mix(in oklab, canvas 90%, var(--accent-2) 10%), canvas);
+      background-size: cover, auto, auto; background-position: center; }
+    .tag { display: inline-block; padding: 6px 10px; border: 1px solid color-mix(in oklab, canvastext 15%, transparent); border-radius: 999px; font-size: 12px; opacity: 0.8; }
+    h1 { font-size: clamp(26px, 4vw, 36px); margin: 10px 0 4px; line-height: 1.2; }
+    .muted { color: color-mix(in oklab, canvastext 60%, canvas 40%); }
+
+    /* Sections */
+    section { margin: 44px 0; }
+    section h2 { font-size: 18px; text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 14px; opacity: 0.9; }
+    .card {
+      border: 1px solid color-mix(in oklab, canvastext 15%, transparent);
+      border-radius: 16px; padding: 18px; transition: border-color .15s ease, transform .15s ease;
+    }
+    .card:hover { border-color: color-mix(in oklab, var(--accent) 30%, canvastext 20%); transform: translateY(-1px); }
+
+    /* Grid utilities */
+    .grid { display: grid; gap: 14px; }
+    .grid.cols-2 { grid-template-columns: 1fr; }
+    .grid.cols-3 { grid-template-columns: 1fr; }
+    @media (min-width: 720px) {
+      .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+      .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* Lists */
+    .pubs { list-style: none; padding: 0; margin: 0; }
+    .pubs li { padding: 14px; border-bottom: 1px dashed color-mix(in oklab, canvastext 12%, transparent); }
+    .pubs li:last-child { border-bottom: 0; }
+    .pub-title { font-weight: 600; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid color-mix(in oklab, canvastext 15%, transparent); }
+    .btn:hover { border-color: var(--accent); text-decoration: none; }
+
+    /* Footer */
+    footer { margin: 48px 0 12px; font-size: 14px; color: color-mix(in oklab, canvastext 60%, canvas 40%); }
+
+    /* Accessibility */
+    .skip { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip:focus { position: static; width: auto; height: auto; padding: 8px; background: canvas; border: 1px solid; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap inner">
+      <div class="brand">Your Name</div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero">
+      <div class="avatar" role="img" aria-label="Portrait placeholder"></div>
+      <div>
+        <span class="tag">Research / Communication / AI</span>
+        <h1>Your Name</h1>
+        <p class="muted">Short one‑line bio. E.g., Postdoctoral Researcher in Political Communication at University X. I study credibility of AI-generated journalism and digital propaganda.</p>
+        <p>
+          <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          &nbsp;·&nbsp;
+          <a href="mailto:you@example.com">you@example.com</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          Keep this to 4–6 concise lines. State your field, methods, and current projects. Optional: a sentence on your teaching philosophy or collaboration interests.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3 style="margin-top:0">Honest Broker AI</h3>
+          <p>Do AI-generated texts reduce polarization in climate debates? Multi-method project combining experiments and content analysis.</p>
+          <p><a href="#">Project page</a> · <a href="#">Preprint</a></p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Ukraine Narrative Codes</h3>
+          <p>A labeled dataset of state justifications for the 2022 full-scale invasion. Public codebook and annotation guidelines.</p>
+          <p><a href="#">Dataset</a> · <a href="#">Codebook</a></p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">LLMs for Content Analysis</h3>
+          <p>Practical guidance for using large language models in communication science. Benchmarking reliability and bias.</p>
+          <p><a href="#">Paper</a> · <a href="#">Materials</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications & Preprints</h2>
+      <ul class="pubs">
+        <li>
+          <div class="pub-title">Title of the article</div>
+          <div>Lastname, Y. (2025). <em>Journal Name</em>. <a href="#">DOI</a></div>
+        </li>
+        <li>
+          <div class="pub-title">AI authorship and credibility in climate news</div>
+          <div>Lastname, Y. (2025). <em>Preprint</em>. <a href="#">OSF</a></div>
+        </li>
+        <li>
+          <div class="pub-title">Computational propaganda in digital media</div>
+          <div>Lastname, Y. (2024). <em>Conference</em>. <a href="#">PDF</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 style="margin-top:0">Methods of Computational Communication</h3>
+          <p>Graduate seminar (WS 2024/25). Reproducible workflows, text-as-data, LLM-assisted coding.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Political Communication in Digital Media</h3>
+          <p>Undergraduate lecture (SS 2025). Platforms, audiences, and algorithms.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>
+          <strong>Links:</strong>
+          <a href="#" aria-label="Google Scholar">Scholar</a> ·
+          <a href="#" aria-label="ORCID">ORCID</a> ·
+          <a href="#" aria-label="GitHub">GitHub</a> ·
+          <a href="#" aria-label="Mastodon / Twitter">Mastodon</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap" style="padding-left:0;padding-right:0">
+        © <span id="year"></span> Your Name. Built with plain HTML/CSS. Hosted on GitHub Pages.
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Tiny enhancement: current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
